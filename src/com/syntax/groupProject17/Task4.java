@@ -16,7 +16,7 @@ public class Task4 {
 
             r.setEmail("asd@yahoo.com");
             r.setUserName("1236781111");
-            r.setPassword("123454");
+            r.setPassword("1236781111");
 
             System.out.println("Email: " + r.getEmail());  //extra test code(not required on task explanation)
             System.out.println("Username: " + r.getUserName()); //extra test code(not required on task explanation)
