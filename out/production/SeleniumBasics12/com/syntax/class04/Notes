@@ -1,0 +1,80 @@
+Selenium Class 4
+
+CSS Selector (Cascading style sheet)
+it is another way of locating elements on the web page
+
+Syntax:
+tagname[attribute = 'attribute value']
+
+Example: button[type = 'submit']
+
+CSS does not give an oportunity to locate the element by its text
+
+Shortcuts for CSS:
+Shortcut for ClassName --> "."
+
+Syntax: tagname.classNameValue
+        input.button
+
+Shortcut for ID --> "#"
+Syntax: tagname#IDValue
+        input#twotabsearchtextbox
+
+contains() method in css:
+* symbol represents contains method
+tagname[attribute *= 'attribute value']
+input[placeholder *= 'phone']
+
+starts-with method in css:
+^ (Circumflex) symbol represents starts with method
+tagname[attribute ^= 'starting attribute value']
+input[type ^= 'pass']
+
+ends-with method in css:
+$ symbol represents ends-with method in css
+tagname[attribute $= 'ending attribute value']
+img[src $= 'syntax.png']
+
+Xpath vs CSS
+-- CSS cannot locate the elements by text whereas xpath can
+-- no ends-with method in xpath
+-- css is faster than xpath (finding elements)
+-- css has shortcuts
+-- no advanced CSS
+-- CSS has more simple syntax than Xpath
+
+WebElement Commands:
+consists of several methods where we can perform an action and get the element state
+on the webpage
+
+isEnabled() -- boolean value
+isDisplayed() -- boolean value
+isSelected() -- boolean value
+clear() -- void
+getText() -- String value
+getAttribute() -- String value
+submit() -- void
+
+
+Task
+Open chrome browser
+Go to “http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login”
+Enter valid username and password (username - Admin, password - Hum@nhrm123)
+Click on login button
+Then verify Syntax Logo is displayed.
+
+TC 1: Amazon link count:
+Open chrome browser
+Go to “https://www.amazon.com/”
+Get all links
+Get number of links that has text
+Print to console only the links that has text
+
+HW 2
+HRMS Application Negative Login:
+Open chrome browser
+Go to “http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login”
+Enter valid username
+Leave password field empty
+Click on login button
+Verify error message with text “Password cannot be empty” is displayed.
