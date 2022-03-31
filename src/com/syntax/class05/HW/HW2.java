@@ -46,7 +46,7 @@ public class HW2 {
         WebElement year = driver.findElement(By.cssSelector("select[id='year']"));
         Select yearDD = new Select(year);
 
-        if (!dayDD.isMultiple()) {
+        if (!yearDD.isMultiple()) {
             yearDD.selectByValue("1990");
         }
         Thread.sleep(1000);
