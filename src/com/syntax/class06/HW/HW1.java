@@ -27,10 +27,10 @@ public class HW1 {
         Thread.sleep(500);
 
         driver.switchTo().frame("FrameTwo");
-        if (driver.findElement(By.linkText("Enroll today")).isDisplayed()) {
-            System.out.println("Enroll Today button is Displayed");
+        if (driver.findElement(By.linkText("Enroll today")).isEnabled()) {
+            System.out.println("Enroll Today button is Enabled");
         } else {
-            System.out.println("Enroll Today button is NOT Displayed");
+            System.out.println("Enroll Today button is NOT Enabled");
         }
         Thread.sleep(500);
         driver.quit();
