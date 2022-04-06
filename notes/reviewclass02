@@ -1,0 +1,66 @@
+*******************Selenium review02*****************
+
+<form t="19048 aa">
+	<div text="mydiv">
+		<label name="myid"/>
+		<input t="ad 123 34"/>
+    	<label name="id"/>
+		<input t="ad 123 34"/>
+	<div>
+</form>
+
+advance xpath:
+get to the nearest sibiling ,parent or ancestor first
+and then have acces to the desired tag
+
+following sibling:
+//label[@name="myid"]/following-sibling::input
+hey get me tag with name "label" whose attribute "name" has value "myid" and then get me
+its following-sibling which is "input";
+
+preceding-sibling:
+the sibling that is above.
+//input[@id = 'calFromDate']/preceding-sibling::label
+
+parent:
+
+//label[text()="Enter message"]/parent::div
+hey get me the tah "label" with the text "Enter message" and then get me its parent "div"
+
+ancestor
+//label[text()="Enter message"]/ancestor::form
+
+hey get me tag with name "label" with the text "Enter message" and then get me it's ancestor "form"
+
+------------------------------------------------------------------
+
+driver.findElment(By.xpath/css/name/id/tag/etc(""));
+
+
+----------------------Radio Buttons------------------
+
+
+---drop downs--
+whenbever we have drop downs that are mad eusing select class
+we can use select calss in selenium to deal with them
+
+the proccess:
+1. get to the select tag for that drop down using you driver.findElement
+2.create an instance of Select class and pass your webElement
+3.we can select any option by value/ by visible text /by index
+
+byvalue;
+byindex;
+byvisibletext;
+
+
+
+
+
+
+
+
+
+
+
+
