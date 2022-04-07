@@ -37,18 +37,15 @@ public class HW1 {
             System.out.println("Checkbox Text is NOT Verified");
         }
 
-        WebElement textBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']")));
+        WebElement textBox = driver.findElement(By.xpath("//input[@type='text']"));
 
         driver.findElement(By.xpath("//button[text()='Enable']")).click();
         WebElement enableButtonText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(), 'enabled!')]")));
         if(textBox.isEnabled()){
             System.out.println("After clicking Enable Button, Textbox is Enabled, full text is: ("+enableButtonText.getText()+")");
+            textBox.sendKeys("Hello World!");
         }else{
             System.out.println("After clicking Enable Button, Textbox is NOT Enabled");
-        }
-
-        if(textBox.isEnabled()){
-            textBox.sendKeys("Hello World!");
         }
 
         driver.findElement(By.xpath("//button[text()='Disable']")).click();
