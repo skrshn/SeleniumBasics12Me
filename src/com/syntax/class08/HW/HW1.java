@@ -50,9 +50,7 @@ public class HW1 {
             textBox.sendKeys("Hello World!");
         }
 
-        WebElement disableButton= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Disable']")));
-        disableButton.click();
-
+        driver.findElement(By.xpath("//button[text()='Disable']")).click();
         WebElement disableButtonText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(), 'disabled!')]")));
         if(disableButtonText.getText().equalsIgnoreCase("It's disabled!")){
             System.out.println("After clicking Disable Button, Textbox is Disabled, full text is: ("+disableButtonText.getText()+")");
