@@ -37,22 +37,23 @@ public class HW1 {
             System.out.println("Checkbox Text is NOT Verified");
         }
 
+        WebElement textBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']")));
+
         driver.findElement(By.xpath("//button[text()='Enable']")).click();
         WebElement enableButtonText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(), 'enabled!')]")));
-        if(enableButtonText.getText().equalsIgnoreCase("It's enabled!")){
+        if(textBox.isEnabled()){
             System.out.println("After clicking Enable Button, Textbox is Enabled, full text is: ("+enableButtonText.getText()+")");
         }else{
             System.out.println("After clicking Enable Button, Textbox is NOT Enabled");
         }
 
-        WebElement textBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']")));
         if(textBox.isEnabled()){
             textBox.sendKeys("Hello World!");
         }
 
         driver.findElement(By.xpath("//button[text()='Disable']")).click();
         WebElement disableButtonText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(), 'disabled!')]")));
-        if(disableButtonText.getText().equalsIgnoreCase("It's disabled!")){
+        if(!textBox.isEnabled()){
             System.out.println("After clicking Disable Button, Textbox is Disabled, full text is: ("+disableButtonText.getText()+")");
         }else{
             System.out.println("After clicking Disable Button, Textbox is NOT Disabled");
