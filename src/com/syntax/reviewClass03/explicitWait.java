@@ -18,11 +18,10 @@ public class explicitWait {
         WebDriver driver = new ChromeDriver();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
         WebElement getButton1 = driver.findElement(By.xpath("//button[@class='btn btn-success']"));
         getButton1.click();
-
-        WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.alertIsPresent());
 
         Alert alert = driver.switchTo().alert();
@@ -36,9 +35,12 @@ public class explicitWait {
         getButton3.click();
         System.out.println(wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button#hidden"))).isDisplayed());
 
+        WebElement disableButton = driver.findElement(By.cssSelector("button#disable"));
         WebElement getButton4 = driver.findElement(By.xpath("//button[@id='enable-button']"));
         getButton4.click();
-        System.out.println(wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button#disable"))).isDisplayed());
+        wait.until(ExpectedConditions.elementToBeClickable(disableButton));
+        System.out.println(disableButton.isEnabled());
+
 
         WebElement checkBox = driver.findElement(By.xpath("//input[@type='checkbox']"));
         WebElement getButton5 = driver.findElement(By.xpath("//button[@id='checkbox']"));
