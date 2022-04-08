@@ -21,7 +21,8 @@ public class TaskClass08 {
 
         WebElement startButton = driver.findElement(By.cssSelector("button#startButton"));
         startButton.click();
-
+//        Thread.sleep(20000);
+//        System.out.println(driver.findElement(By.xpath("//*[contains(text(), 'Welcome Syntax')]")).getText());
 
         WebDriverWait wait = new WebDriverWait(driver,20);
 

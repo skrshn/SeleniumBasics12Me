@@ -7,6 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 //go to https://the-internet.herokuapp.com/dynamic_controls
@@ -59,3 +63,6 @@ public class HW1 {
         driver.quit();
     }
 }
+
+
+
