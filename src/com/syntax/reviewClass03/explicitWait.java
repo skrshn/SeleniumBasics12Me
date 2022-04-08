@@ -48,6 +48,6 @@ public class explicitWait {
         wait.until(ExpectedConditions.elementToBeSelected(checkBox));
         System.out.println(checkBox.isSelected());
 
-
+        driver.quit();
     }
 }
