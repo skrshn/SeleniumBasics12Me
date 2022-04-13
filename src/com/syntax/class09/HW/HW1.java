@@ -31,44 +31,12 @@ public class HW1 {
         WebElement calendarImgFrom = driver.findElement(By.xpath("//input[@id='calFromDate']"));
         calendarImgFrom.click();
 
-        WebElement monthDDFrom = driver.findElement(By.xpath("//select[@class='ui-datepicker-month']"));
-        Select selectMonthDDFrom = new Select(monthDDFrom);
-        selectMonthDDFrom.selectByVisibleText("Jul");
-
-        WebElement yearDDFrom = driver.findElement(By.xpath("//select[@class='ui-datepicker-year']"));
-        Select selectYearDDFrom = new Select(yearDDFrom);
-        selectYearDDFrom.selectByVisibleText("2021");
-
-        List<WebElement> daysDDFrom = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
-        for (WebElement days : daysDDFrom
-        ) {
-            String dateText = days.getText();
-            if (dateText.equals("4")) {
-                days.click();
-                break;
-            }
-        }
+        CalenderSelect.calendarMethod(driver,"Jul","2021","4");
 
         WebElement calendarImgTo = driver.findElement(By.xpath("//input[@id='calToDate']"));
         calendarImgTo.click();
+        CalenderSelect.calendarMethod(driver,"Feb","2022","25");
 
-        WebElement monthDDTo = driver.findElement(By.xpath("//select[@class='ui-datepicker-month']"));
-        Select selectMonthDDTo = new Select(monthDDTo);
-        selectMonthDDTo.selectByVisibleText("Feb");
-
-        WebElement yearDDTo = driver.findElement(By.xpath("//select[@class='ui-datepicker-year']"));
-        Select selectYearDDTo = new Select(yearDDTo);
-        selectYearDDTo.selectByVisibleText("2022");
-
-        List<WebElement> daysDD = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']/tbody/tr/td"));
-        for (WebElement days : daysDD
-        ) {
-            String dateText = days.getText();
-            if (dateText.equals("25")) {
-                days.click();
-                break;
-            }
-        }
 
         List<WebElement> checkboxLabels = driver.findElements(By.xpath("//input[@type='checkbox']/preceding-sibling::label"));
         List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
@@ -76,8 +44,7 @@ public class HW1 {
         for (int i = 0; i < checkboxLabels.size(); i++) {
             if (checkboxes.get(i).isSelected()) {
                 checkboxes.get(i).click();
-            }
-            if (checkboxLabels.get(i).getText().equals("Cancelled") || checkboxLabels.get(i).getText().equals("Rejected")) {
+            }else if (checkboxLabels.get(i).getText().equals("Cancelled") || checkboxLabels.get(i).getText().equals("Rejected")) {
                 checkboxes.get(i).click();
             }
         }
