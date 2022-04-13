@@ -28,13 +28,13 @@ public class HW1 {
         WebElement leaveTab = driver.findElement(By.xpath("//a[@id='menu_leave_viewLeaveModule']"));
         leaveTab.click();
 
-        WebElement calendarImgFrom = driver.findElement(By.xpath("//input[@id='calFromDate']"));
-        calendarImgFrom.click();
+        WebElement calendarFrom = driver.findElement(By.xpath("//input[@id='calFromDate']"));
+        calendarFrom.click();
 
         CalenderSelect.calendarMethod(driver,"Jul","2021","4");
 
-        WebElement calendarImgTo = driver.findElement(By.xpath("//input[@id='calToDate']"));
-        calendarImgTo.click();
+        WebElement calendarTo = driver.findElement(By.xpath("//input[@id='calToDate']"));
+        calendarTo.click();
         CalenderSelect.calendarMethod(driver,"Feb","2022","25");
 
 
