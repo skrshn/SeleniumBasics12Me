@@ -26,7 +26,7 @@ public class class10HW1Methods {
         List<WebElement> Airports = driver.findElements(By.xpath("//table[@id='airportsSection']/tbody/tr/td[@class='airport-code']"));
         for (WebElement Airport : Airports
         ) {
-            if (Airport.getText().contains(airportCode)) {
+            if (Airport.getText().substring(0,3).equals(airportCode)) {
                 Airport.click();
                 break;
             }
