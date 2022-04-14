@@ -29,7 +29,7 @@ public class HW1 {
         WebElement searchFromLocationButton = driver.findElement(By.xpath("//a[@data-for='reservationFlightSearchForm.originAirport']"));
         searchFromLocationButton.click();
 
-        class10HW1Methods.findClickAirport(driver, "United States", "Hawaii", "KOA");
+        class10HW1Methods.findClickAirport(driver, "Turkey", "Istanbul", "IST");
 
         WebElement searchToLocationButton = driver.findElement(By.xpath("//a[@data-for='reservationFlightSearchForm.destinationAirport']"));
         searchToLocationButton.click();
