@@ -22,7 +22,7 @@ public class WebTablesWithPagination {
         while (flag) {
             for (WebElement row : rows) {
                 String rowText = row.getText();
-                if(rowText.contains("Archy J")){
+                if(rowText.contains("Juan valdez")){
                     flag=false;
                     System.out.println(rowText);
                     break;
