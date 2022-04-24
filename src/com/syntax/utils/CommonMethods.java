@@ -1,10 +1,12 @@
 package com.syntax.utils;
 
 import com.syntax.testbase.BaseClass;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CommonMethods extends BaseClass {
     /**
@@ -26,6 +28,16 @@ public class CommonMethods extends BaseClass {
             e.printStackTrace();
         }
 
+    }
+
+    public static void takeScreenShot(String path) {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(sourceFile, new File(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

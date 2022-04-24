@@ -9,6 +9,12 @@ public class DashboardPage extends CommonMethods {
     @FindBy(id = "welcome")
     public static WebElement welcomeAdmin;
 
+    @FindBy(xpath = "//a[@id='menu_pim_viewPimModule']")
+    public static WebElement pimTabButton;
+
+
+
+
     public DashboardPage() {
         PageFactory.initElements(driver,this);
     }
